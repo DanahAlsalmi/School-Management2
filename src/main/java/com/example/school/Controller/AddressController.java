@@ -22,18 +22,18 @@ public class AddressController {
     @PostMapping("/add")
     public ResponseEntity addAddress(@Valid @RequestBody AddressDTO profile) {
         addressService.addAddress(profile);
-        return ResponseEntity.status(200).body("Profile added successfully");
+        return ResponseEntity.status(200).body("Address added successfully");
 
     }
     @PutMapping("/update")
     public ResponseEntity updateAddress(@Valid @RequestBody AddressDTO profile) {
         addressService.updateAddress(profile);
-        return ResponseEntity.status(200).body("Profile updated successfully");
+        return ResponseEntity.status(200).body("Address updated successfully");
     }
     @DeleteMapping("/delete/{id}")
     public ResponseEntity deleteAddress(@PathVariable int id) {
         addressService.deleteAddress(id);
-        return ResponseEntity.status(200).body("Profile deleted successfully");
+        return ResponseEntity.status(200).body("Address deleted successfully");
     }
     @GetMapping("/teacher/{teacherId}")
     public ResponseEntity getTeacherDetails(@PathVariable Integer teacherId) {

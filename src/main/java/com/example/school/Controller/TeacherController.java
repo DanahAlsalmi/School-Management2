@@ -24,7 +24,7 @@ public class TeacherController {
         return ResponseEntity.status(200).body("Teacher added successfully");
     }
 
-    @PutMapping("/upadte/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity updateTeacher(@PathVariable Integer id, @Valid @RequestBody Teacher teacher) {
         teacherService.updateTeacher(id, teacher);
         return ResponseEntity.status(200).body("Teacher updated successfully");
@@ -36,7 +36,7 @@ public class TeacherController {
         return ResponseEntity.status(200).body("Teacher deleted successfully");
     }
 
-    @GetMapping("/teacher/{teacherId}")
+    @GetMapping("/{teacherId}")
     public ResponseEntity getTeacherDetails(@PathVariable Integer teacherId) {
         Teacher teacher = teacherService.getTeacherById(teacherId);
         return ResponseEntity.status(200).body(teacher);

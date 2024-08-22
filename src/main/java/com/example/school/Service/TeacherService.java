@@ -23,14 +23,15 @@ public class TeacherService {
     }
     //update
     public void updateTeacher(Integer id, Teacher teacher) {
-        Teacher teacher1 = teacherRepository.findTeacherByid(id);
-        if (teacher1 == null) {
+        Teacher t = teacherRepository.findTeacherByid(id);
+        if (t == null) {
             throw new ApiException("Teacher Not Found");
         }
-        teacher1.setName(teacher.getName());
-        teacher1.setEmail(teacher.getEmail());
-        teacher1.setSalary(teacher.getSalary());
-        teacherRepository.save(teacher1);
+        t.setName(teacher.getName());
+        t.setAge(teacher.getAge());
+        t.setEmail(teacher.getEmail());
+        t.setSalary(teacher.getSalary());
+        teacherRepository.save(t);
     }
     //Delete
     public void deleteTeacher(Integer id) {
